@@ -131,10 +131,10 @@ class PersonaTest {
 
 	@DisplayName("SetNombre(String nombre)")
 	@ParameterizedTest
-	@MethodSource("")
+	@MethodSource("testSetNombreProvider")
 	void testSetNombre(String nuevoNombre) {
 		sut.setNombre(nuevoNombre);
-		assertEquals("Manolo",sut.getNombre());
+		assertEquals(nuevoNombre,sut.getNombre());
 	}
 	
 	public static Stream<Arguments> testSetNombreProvider(){
@@ -143,9 +143,18 @@ class PersonaTest {
 				);
 	}
 
-	@Test
-	void testSetEdad() {
-		fail("Not yet implemented");
+	@DisplayName("SetEdad(int edad)")
+	@ParameterizedTest
+	@MethodSource("testSetEdadProvider")
+	void testSetEdad(int nuevaEdad) {
+		sut.setEdad(nuevaEdad);
+		assertEquals(nuevaEdad,sut.getEdad());
+	}
+	
+	public static Stream<Arguments> testSetEdadProvider(){
+		return Stream.of(
+					Arguments.of(25)
+				);
 	}
 
 	@Test
