@@ -241,18 +241,6 @@ public class Persona {
 		return SEXO_DEF;
 	}
 
-	public static int getInfrapeso() {
-		return INFRAPESO;
-	}
-
-	public static int getPesoIdeal() {
-		return PESO_IDEAL;
-	}
-
-	public static int getSobrepeso() {
-		return SOBREPESO;
-	}
-
 	public String getNombre() {
 		return nombre;
 	}
